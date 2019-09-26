@@ -1,0 +1,13 @@
+.SubscribeForm {
+
+}
+
+.SubscribeForm-email {
+  padding: 0.25rem 0.5rem;
+}
+
+.SubscribeForm-button {
+  color: var(--white);
+  background-color: var(--green);
+  font-family: var(--sans);
+}

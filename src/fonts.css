@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Copernicus';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/Copernicus-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Copernicus';
+  font-weight: 400;
+  font-style: italic;
+  src: url('./fonts/Copernicus-BookItalic.woff2') format('woff2');
+}
