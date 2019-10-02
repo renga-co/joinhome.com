@@ -1,13 +1,41 @@
 .SubscribeForm {
-
+  display: flex;
+  position: relative;
+  background-color: white;
+  height: 52px;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 1.1rem;
 }
 
 .SubscribeForm-email {
-  padding: 0.25rem 0.5rem;
+  display: block;
+  padding: 0.25rem 1.5rem 0.25rem 1rem;
+  background-color: transparent;
+  letter-spacing: -0.2px;
+  line-height: 52px;
 }
 
 .SubscribeForm-button {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0.3125rem;
   color: var(--white);
   background-color: var(--green);
-  font-family: var(--sans);
+  box-shadow: 0 1px 2px rgba(53, 74, 60, 0.15);
+  max-width: 120px;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
+  line-height: 44px;
+}
+
+.SubscribeForm-caption {
+  margin-top: 0.5rem;
 }

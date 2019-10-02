@@ -11,3 +11,19 @@
   font-style: italic;
   src: url('./fonts/Copernicus-BookItalic.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/FoundersGrotesk-Regular.woff2') format('woff2'),
+    url('./fonts/FoundersGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  font-weight: 400;
+  font-style: italic;
+  src: url('./fonts/FoundersGrotesk-RegularItalic.woff2') format('woff2'),
+    url('./fonts/FoundersGrotesk-RegularItalic.woff') format('woff');
+}

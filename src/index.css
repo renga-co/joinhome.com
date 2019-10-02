@@ -11,8 +11,13 @@
   --lightGreen: #d1dbd5;
   --yellow: #e1ab54;
 
-  --sans: sans-serif;
+  --sans: 'Founders Grotesk', Helvetica, Arial, sans-serif;
   --serif: Copernicus, Georgia, serif;
+
+
+
+  --bodyVerticalPadding: 1.25rem;
+  --bodyHorizontalPadding: 1.25rem;
 }
 
 html {
@@ -27,22 +32,7 @@ html {
 }
 
 body {
-  padding: 1.25rem;
-}
-
-.f-title {
-  font-size: 2.5rem;
-  line-height: 1.15;
-  letter-spacing: -1.25px;
-  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
-}
-
-.c-black {
-  color: var(--black);
-}
-
-.c-introBlack {
-  color: #4d3833;
+  padding: var(--bodyVerticalPadding) var(--bodyHorizontalPadding);
 }
 
 input[type="text"],
@@ -56,23 +46,141 @@ button {
   width: 100%;
 }
 
-.IntroHeader {
-  background-color: var(--darkWhite);
-  padding: 1rem;
+.f-title {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  letter-spacing: -1.25px;
+  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
 }
 
-.FeatureSection {
+.f-subtitle {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -1.25px;
+  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
+}
+
+.f-sectionTitle {
+  font-size: 1.75rem;
+  letter-spacing: -1px;
+  font-variant: oldstyle-nums;
+  font-feature-settings: "liga", "kern", "onum";
+}
+
+.f-caption {
+  color: var(--brown);
+  font-size: 0.875rem;
+  letter-spacing: -0.5px;
+}
+
+.f-eyebrowLarge {
+  color: var(--brown);
+  font-family: var(--sans);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.c-black {
+  color: var(--black);
+}
+
+.c-introBlack {
+  color: #4d3833;
+}
+
+.nw {
+  white-space: nowrap;
+}
+
+.g {
   display: grid;
   grid-template-columns: repeat(6, [col] 1fr);
   grid-template-rows: repeat(1, [row] auto);
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
+}
+
+.g-left {
+  grid-column: col 1 / span 6;
+}
+
+.g-right {
+  grid-column: col 1 / span 6;
+}
+
+.g-block {
+  padding: 1rem;
+}
+
+.g-blockWrap {
+  max-width: 40ch;
+  padding: 1.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.SiteHeader {
+  padding: 1rem 2.5rem 2rem;
+}
+
+.SiteHeader-logo {
+}
+
+.IntroHeader {
+  background-color: var(--darkWhite);
+}
+
+.IntroHeader-text {
+}
+
+.IntroHeader-text h3 {
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+}
+
+.IntroHeader-text hr {
+  border: 0;
+  border-top: 1px var(--lightBrown) solid;
+}
+
+.IntroHeader-figure {
+  position: relative;
+}
+
+.IntroHeader-figureInner {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+}
+
+.FeatureIntroductionSection {
+  padding-top: 12vw;
+  padding-bottom: 3vw;
+  text-align: center;
+}
+
+.FeatureIntroductionSection h3 {
+  font-family: var(--sans);
+}
+
+.FeatureSection {
+  align-items: center;
   padding-top: 3vw;
   padding-bottom: 3vw;
 }
 
 .FeatureSection-figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-column: col 1 / span 3;
+  padding: 0 2vw;
 }
 
 .FeatureSection-text {
@@ -82,10 +190,6 @@ button {
 
 .FeatureSection-text h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.75rem;
-  letter-spacing: -0.07rem;
-  font-variant: oldstyle-nums;
-  font-feature-settings: "liga", "kern", "onum";
 }
 
 .FeatureSection-text p {
@@ -97,17 +201,35 @@ button {
   margin-top: 0.5rem;
 }
 
-.SiteFooter {
+.CallToActionSection {
+  align-items: center;
+  background-color: var(--darkWhite);
+}
 
+.SiteFooter {
+  margin-top: 4rem;
+}
+
+.SiteFooter a + a {
+  margin-left: 1rem;
 }
 
 @media only screen and (min-width: 767px) {
+  :root {
+    --bodyVerticalPadding: 4vw;
+    --bodyHorizontalPadding: 2vw;
+  }
+
   html {
     font-size: 112.5%;
   }
 
-  body {
-    padding: 4vw;
+  .g-left {
+    grid-column: col 1 / span 3;
+  }
+
+  .g-right {
+    grid-column: col 4 / span 3;
   }
 
   .SiteFooter {
