@@ -13,7 +13,7 @@
   display: block;
   padding: 0.25rem 1.5rem 0.25rem 1rem;
   background-color: transparent;
-  letter-spacing: -0.2px;
+  letter-spacing: 0.2px;
   line-height: 52px;
 }
 
@@ -37,5 +37,5 @@
 }
 
 .SubscribeForm-caption {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
