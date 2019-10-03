@@ -45,18 +45,20 @@ button {
   width: 100%;
 }
 
+.ff-ss04 {
+  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
+}
+
 .f-title {
   font-size: 2.5rem;
   line-height: 1.15;
   letter-spacing: -1.25px;
-  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
 }
 
 .f-subtitle {
   font-size: 2.25rem;
   line-height: 1.15;
   letter-spacing: -1.25px;
-  font-feature-settings: 'ss04'; /* ss04 = alternate italic w */
 }
 
 .f-sectionTitle {
@@ -181,6 +183,7 @@ button {
 
 .FeatureSection {
   align-items: center;
+  justify-content: center;
   margin-bottom: 4rem;
 }
 
@@ -195,9 +198,10 @@ button {
 
 .FeatureSection-text {
   grid-column: col 1 / span 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 50ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .FeatureSection-text h3 {
@@ -243,7 +247,12 @@ button {
 }
 
 .SiteFooter {
+  color: var(--brown);
   margin-top: 4rem;
+}
+
+.SiteFooter a:hover {
+  color: var(--black);
 }
 
 .SiteFooter a + a {
@@ -273,9 +282,15 @@ button {
     padding: 0 calc(1rem + var(--gridBlockWrapPadding)) 2rem;
   }
 
+  .FeatureIntroductionSection {
+    padding-top: 16vw;
+    padding-bottom: 12vw;
+    text-align: center;
+  }
+
   .FeatureSection {
-    padding-top: 3vw;
-    padding-bottom: 3vw;
+    padding-top: 6vw;
+    padding-bottom: 6vw;
     margin-bottom: 0;
   }
 
