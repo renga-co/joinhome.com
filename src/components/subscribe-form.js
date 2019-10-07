@@ -14,6 +14,7 @@ function SubscribeForm() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState(State.IDLE);
 
+  const isDisabled = state !== State.IDLE;
 
   return (
     <div>
@@ -21,13 +22,13 @@ function SubscribeForm() {
         <input
           class="SubscribeForm-email"
           type="email"
-          disabled={state !== State.IDLE}
+          disabled={isDisabled}
           required
           placeholder="Enter your email…"
           onInput={e => setEmail(e.target.value)}
           value={email}
         />
-        <button class="SubscribeForm-button" type="submit" disabled={state !== State.IDLE}>
+        <button class="SubscribeForm-button" type="submit" disabled={isDisabled}>
           Sign Up
         </button>
       </form>
@@ -38,7 +39,6 @@ function SubscribeForm() {
   );
 
   function onSubmit (e) {
-    //
     e.preventDefault();
     setState(State.SUBMITTING);
 
@@ -46,25 +46,21 @@ function SubscribeForm() {
     const params = new URLSearchParams();
     params.append('email', email);
     params.append('createdAt', date);
-    console.log(date);
 
     fetch(`${WEBHOOK_URL}?${params}`)
       .then(res => {
-        console.log('submitted');
         setState(State.SUBMITTED);
       })
       .catch(err => {
         console.error(err);
-        setState(State.ERROR);
+        setState(State.IDLE);
       });
   }
 }
 
 for (let el of document.querySelectorAll(".js-subscribeForm")) {
   render(
-    <div>
-      <SubscribeForm />
-    </div>,
+    <SubscribeForm />,
     el
   );
 }

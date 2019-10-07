@@ -188,6 +188,8 @@ button {
   padding-right: 20%;
   padding-top: 4vh;
   background-color: var(--lightGreen);
+  background-image: url('./images/noise.png');
+  background-size: 40px;
 }
 
 .IntroHeader-frameB img {
@@ -209,6 +211,9 @@ button {
   align-items: center;
   justify-content: center;
   margin-bottom: 4rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .FeatureSection-figure {
@@ -217,6 +222,14 @@ button {
   justify-content: center;
   grid-column: col 1 / span 6;
   margin-bottom: 1rem;
+}
+
+.FeatureSection-figurePhone {
+  position: relative;
+}
+
+.FeatureSection-figureFrame {
+  position: absolute;
 }
 
 .FeatureSection-text {
@@ -242,6 +255,8 @@ button {
 .CallToActionSection {
   align-items: center;
   background-color: var(--lightGreen);
+  background-image: url('./images/noise.png');
+  background-size: 40px;
 }
 
 .CallToActionSection-logo {
@@ -359,6 +374,10 @@ button {
     grid-row: 1;
   }
 
+  .CallToActionSection {
+    margin-top: 5vw;
+  }
+
   .CallToActionSection-logo {
     display: block;
   }
@@ -387,9 +406,5 @@ button {
 @media only screen and (min-width: 1200px) {
   html {
     font-size: 112.5%;
-  }
-
-  .FeatureSection-figure {
-    padding: 0 2vw;
   }
 }
