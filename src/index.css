@@ -136,10 +136,15 @@ button {
 }
 
 .SiteHeader {
-  padding: 1rem calc(1rem + var(--gridBlockWrapPadding)) 2rem;
+  padding: 0.75rem calc(1rem + var(--gridBlockWrapPadding)) 1.5rem;
 }
 
-.SiteHeader-logo {
+.SiteHeader a {
+  transition: opacity 200ms ease;
+}
+
+.SiteHeader a:hover {
+  opacity: 0.6;
 }
 
 .IntroHeader {
@@ -174,7 +179,7 @@ button {
   display: none;
   height: 0;
   padding-bottom: 69%;
-  background-image: url('./images/home-a.jpg');
+  background-image: url('./images/hero-photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -273,7 +278,7 @@ button {
 }
 
 .CallToActionSection-figureInner {
-  background-image: url('./images/home-c.png');
+  background-image: url('./images/call-to-action.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: polygon(1% 1%, 100% 0%, 100% 100%, 0% 98%, 0% 64%);
@@ -316,7 +321,7 @@ button {
   }
 
   .SiteHeader {
-    padding: 0 calc(1rem + var(--gridBlockWrapPadding)) 2rem;
+    padding: 0 calc(1rem + var(--gridBlockWrapPadding)) 1.5rem;
   }
 
   .IntroHeader-text {
@@ -339,7 +344,7 @@ button {
 
   .FeatureIntroductionSection {
     padding-top: 20vw;
-    padding-bottom: 4vw;
+    padding-bottom: 6vw;
     text-align: center;
   }
 
@@ -406,5 +411,11 @@ button {
 @media only screen and (min-width: 1200px) {
   html {
     font-size: 112.5%;
+  }
+
+  .f-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -2px;
   }
 }
