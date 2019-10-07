@@ -32,12 +32,14 @@ html {
 
 body {
   padding: var(--bodyVerticalPadding) var(--bodyHorizontalPadding);
+  overflow-x: hidden;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 button {
+  color: inherit;
   border: none;
   appearance: none;
   font-family: inherit;
@@ -50,8 +52,8 @@ button {
 }
 
 .f-title {
-  font-size: 2.5rem;
-  line-height: 1.15;
+  font-size: 2.25rem;
+  line-height: 1.2125;
   letter-spacing: -1.25px;
 }
 
@@ -86,7 +88,7 @@ button {
 }
 
 .c-introBlack {
-  color: #4d3833;
+  color: #504643;
 }
 
 .nw {
@@ -118,7 +120,7 @@ button {
 }
 
 .g-textWrap {
-  max-width: 35ch;
+  max-width: 40ch;
 }
 
 .mb-1 {
@@ -144,17 +146,18 @@ button {
   background-color: var(--darkWhite);
 }
 
-.IntroHeader-text {
+.IntroHeader-text > div:first-child {
+  border-bottom: 1px var(--lightBrown) solid;
 }
 
 .IntroHeader-text h3 {
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
 .IntroHeader-text hr {
   border: 0;
-  border-top: 1px var(--lightBrown) solid;
 }
 
 .IntroHeader-figure {
@@ -162,13 +165,34 @@ button {
 }
 
 .IntroHeader-figureInner {
-  position: absolute;
-  top: -10rem;
+  position: relative;
   left: 0;
+  overflow: visible;
 }
 
-.IntroHeader-figureInner img + img {
+.IntroHeader-frameA {
+  display: none;
+  height: 0;
+  padding-bottom: 69%;
+  background-image: url('./images/home-a.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.IntroHeader-frameB {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   margin-top: 1rem;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 4vh;
+  background-color: var(--lightGreen);
+}
+
+.IntroHeader-frameB img {
+  position: relative;
+  top: 1rem;
 }
 
 .FeatureIntroductionSection {
@@ -192,8 +216,7 @@ button {
   align-items: center;
   justify-content: center;
   grid-column: col 1 / span 6;
-  margin-bottom: 2rem;
-  padding: 0 2vw;
+  margin-bottom: 1rem;
 }
 
 .FeatureSection-text {
@@ -201,7 +224,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 50ch;
 }
 
 .FeatureSection-text h3 {
@@ -219,11 +241,11 @@ button {
 
 .CallToActionSection {
   align-items: center;
-  background-color: var(--darkWhite);
+  background-color: var(--lightGreen);
 }
 
 .CallToActionSection-logo {
-  display: none;
+  margin-top: 1rem;
 }
 
 .CallToActionSection-figure {
@@ -282,26 +304,59 @@ button {
     padding: 0 calc(1rem + var(--gridBlockWrapPadding)) 2rem;
   }
 
+  .IntroHeader-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75vh;
+  }
+
+  .IntroHeader-figureInner {
+    position: absolute;
+    top: 50%;
+    right: -4rem;
+    transform: translateY(-50%);
+  }
+
+  .IntroHeader-frameA {
+    display: block;
+  }
+
   .FeatureIntroductionSection {
-    padding-top: 16vw;
-    padding-bottom: 12vw;
+    padding-top: 20vw;
+    padding-bottom: 4vw;
     text-align: center;
   }
 
   .FeatureSection {
-    padding-top: 6vw;
-    padding-bottom: 6vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
     margin-bottom: 0;
   }
 
+  .FeatureSection-figure,
+  .FeatureSection-text {
+    grid-column-end: span 3;
+  }
+
   .FeatureSection-figure {
-    grid-column: col 1 / span 3;
+    grid-column-start: col 1;
   }
 
   .FeatureSection-text {
-    grid-column: col 4 / span 3;
+    grid-column-start: col 4;
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .FeatureSection--reverse .FeatureSection-figure {
+    grid-column-start: col 4;
+    grid-row: 1;
+  }
+
+  .FeatureSection--reverse .FeatureSection-text {
+    grid-column-start: col 1;
+    grid-row: 1;
   }
 
   .CallToActionSection-logo {
@@ -323,8 +378,18 @@ button {
   }
 }
 
+@media only screen and (min-width: 900px) {
+  .IntroHeader-figureInner {
+    right: 0;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 120%;
+    font-size: 112.5%;
+  }
+
+  .FeatureSection-figure {
+    padding: 0 2vw;
   }
 }
