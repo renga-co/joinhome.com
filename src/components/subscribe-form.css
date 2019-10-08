@@ -16,6 +16,7 @@
 
 .SubscribeForm-email[type="email"] {
   display: block;
+  margin: 0;
   padding: 0.325rem 7rem 0.175rem var(--subscribeFormLeftPadding);
   outline: none;
   border-radius: var(--subscribeFormBorderRadius);
