@@ -26,7 +26,7 @@
   transition: border-color 200ms ease;
 }
 
-.SubscribeForm-email:focus {
+.SubscribeForm-email:focus:not(:disabled) {
   border-color: rgba(73, 115, 77, 0.5);
 }
 
