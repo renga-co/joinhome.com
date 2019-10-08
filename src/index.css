@@ -15,8 +15,9 @@
   --serif: Copernicus, Georgia, serif;
 
   --bodyVerticalPadding: 1.25rem;
-  --bodyHorizontalPadding: 0.75rem;
-  --gridBlockWrapPadding: 1rem;
+  --bodyHorizontalPadding: 0.5rem;
+  --gridBlockPadding: 0.5rem;
+  --gridBlockWrapPadding: 0.5rem;
 }
 
 html {
@@ -52,13 +53,13 @@ button {
 }
 
 .f-title {
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.2125;
   letter-spacing: -1.25px;
 }
 
 .f-subtitle {
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.15;
   letter-spacing: -1.25px;
 }
@@ -112,7 +113,7 @@ button {
 }
 
 .g-block {
-  padding: 1rem;
+  padding: var(--gridBlockPadding);
 }
 
 .g-blockWrap {
@@ -149,10 +150,6 @@ button {
 
 .IntroHeader {
   background-color: var(--darkWhite);
-}
-
-.IntroHeader-text > div:first-child {
-  border-bottom: 1px var(--lightBrown) solid;
 }
 
 .IntroHeader-text h3 {
@@ -193,7 +190,6 @@ button {
   padding-right: 20%;
   padding-top: 4vh;
   background-color: var(--lightGreen);
-  background-image: url('./images/noise.png');
   background-size: 40px;
 }
 
@@ -242,6 +238,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .FeatureSection-text h3 {
@@ -260,7 +259,6 @@ button {
 .CallToActionSection {
   align-items: center;
   background-color: var(--lightGreen);
-  background-image: url('./images/noise.png');
   background-size: 40px;
 }
 
@@ -301,15 +299,31 @@ button {
   margin-left: 0.5rem;
 }
 
+@media only screen and (min-width: 479px) {
+  :root {
+    --gridBlockPadding: 1rem;
+    --gridBlockWrapPadding: 1rem;
+  }
+}
+
 @media only screen and (min-width: 767px) {
   :root {
     --bodyVerticalPadding: 3vw;
     --bodyHorizontalPadding: 2vw;
+    --gridBlockPadding: 1rem;
     --gridBlockWrapPadding: 2.5vw;
   }
 
   html {
     font-size: 115%;
+  }
+
+  .f-title {
+    font-size: 2.25rem;
+  }
+
+  .f-subtitle {
+    font-size: 2.25rem;
   }
 
   .g-left {
@@ -329,6 +343,10 @@ button {
     flex-direction: column;
     justify-content: center;
     height: 75vh;
+  }
+
+  .IntroHeader-text > div:first-child {
+    border-bottom: 1px var(--lightBrown) solid;
   }
 
   .IntroHeader-figureInner {
@@ -367,6 +385,7 @@ button {
     grid-column-start: col 4;
     padding-left: 3rem;
     padding-right: 3rem;
+    padding-top: 0;
   }
 
   .FeatureSection--reverse .FeatureSection-figure {
