@@ -23,7 +23,6 @@
   border: 2px transparent solid;
   background-color: transparent;
   letter-spacing: 0.2px;
-  line-height: 52px;
   transition: border-color 200ms ease;
 }
 
